@@ -151,7 +151,6 @@ wp movies sync     # Manual sync
 - Uses WordPress components
 - Modern JavaScript features
 - SASS styling
-- Hot Module Replacement during development
 
 ### Custom Post Type: Movies
 
