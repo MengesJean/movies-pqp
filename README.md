@@ -131,18 +131,8 @@ npm start
 # Build for production
 npm run build
 
-# Format code
-npm run format
-
-# Lint JavaScript
-npm run lint:js
-
-# Lint CSS
-npm run lint:css
-
 # WP-CLI commands
 wp movies sync     # Manual sync
-wp movies status   # Check sync status
 ```
 
 ## 📚 WordPress Development References
