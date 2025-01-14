@@ -1,6 +1,6 @@
 <?php
-// error_reporting(E_ALL);
-// ini_set('display_errors', 1);
+error_reporting(E_ALL);
+ini_set('display_errors', 1);
 /**
  * Plugin Name: Movies Manager
  * Description: A WordPress plugin to manage movies with TMDB API integration and Gutenberg blocks
@@ -24,6 +24,7 @@ require_once MOVIES_PLUGIN_PATH . 'includes/class-movies-post-type.php';
 require_once MOVIES_PLUGIN_PATH . 'includes/class-movies-admin.php';
 require_once MOVIES_PLUGIN_PATH . 'includes/class-movies-api.php';
 require_once MOVIES_PLUGIN_PATH . 'includes/class-movies-cron.php';
+require_once MOVIES_PLUGIN_PATH . 'includes/class-movies-template-loader.php';
 
 // Initialize the plugin
 class MoviesPlugin {
@@ -57,10 +58,13 @@ class MoviesPlugin {
 
         // Initialize Gutenberg blocks
         add_action('init', array($this, 'register_blocks'));
+
+        // Initialize Template Loader
+        new Movies_Template_Loader();
     }
 
     public function register_blocks() {
-        
+        register_block_type(MOVIES_PLUGIN_PATH . "/build/blocks/movie-block");
     }
 }
 
